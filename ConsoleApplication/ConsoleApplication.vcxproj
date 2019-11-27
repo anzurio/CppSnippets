@@ -153,6 +153,9 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CartesianPoint.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
