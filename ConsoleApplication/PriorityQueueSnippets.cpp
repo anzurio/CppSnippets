@@ -21,6 +21,26 @@ public:
 	}
 };
 
+template<class _Container, class _Pr>
+void FillHeapFromContainer(const _Container& points, std::priority_queue<typename _Container::value_type, _Container, _Pr>& heap)
+{
+	for (const auto& point : points)
+	{
+		heap.push({ point.X, point.Y });
+	}
+}
+
+template<class _Container, class _Pr>
+void PrintAndClearHeap(std::priority_queue<typename _Container::value_type, _Container, _Pr>& heap)
+{
+	while (!heap.empty())
+	{
+		auto point = heap.top();
+		heap.pop();
+		std::cout << point << std::endl;
+	}
+}
+
 template<typename T>
 void PriorityQueueSnippets::usingLambda(const std::vector<CartesianPoint<T>>& points)
 {
@@ -35,17 +55,8 @@ void PriorityQueueSnippets::usingLambda(const std::vector<CartesianPoint<T>>& po
 		decltype(cmp)
 	> heap(cmp);
 
-	for (const CartesianPoint<T>& point : points)
-	{
-		heap.push({ point.X, point.Y });
-	}
-
-	while (!heap.empty())
-	{
-		auto point = heap.top();
-		heap.pop();
-		std::cout << point << std::endl;
-	}
+	FillHeapFromContainer(points, heap);
+	PrintAndClearHeap(heap);
 }
 
 template<typename T>
@@ -57,17 +68,8 @@ void PriorityQueueSnippets::usingFunction(const std::vector<CartesianPoint<T>>& 
 		std::function<bool(CartesianPoint<T>, CartesianPoint<T>)> //OR decltype(&isFurthestFromOrigin)
 	> heap(isFurthestFromOrigin<T>);
 
-	for (const CartesianPoint<T>& point : points)
-	{
-		heap.push({ point.X, point.Y });
-	}
-
-	while (!heap.empty())
-	{
-		auto point = heap.top();
-		heap.pop();
-		std::cout << point << std::endl;
-	}
+	FillHeapFromContainer(points, heap);
+	PrintAndClearHeap(heap);
 }
 
 template<typename T>
@@ -79,15 +81,7 @@ void PriorityQueueSnippets::usingFunctor(const std::vector<CartesianPoint<T>>& p
 		FurthestFromOriginFunctor<T>
 	> heap;
 
-	for (const CartesianPoint<T>& point : points)
-	{
-		heap.push({ point.X, point.Y });
-	}
-
-	while (!heap.empty())
-	{
-		auto point = heap.top();
-		heap.pop();
-		std::cout << point << std::endl;
-	}
+	FillHeapFromContainer(points, heap);
+	PrintAndClearHeap(heap);
 }
+
