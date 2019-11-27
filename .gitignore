@@ -33,3 +33,5 @@
 /ConsoleApplication/ConsoleApplication.vcxproj.user
 /ConsoleApplication/ConsoleApplication.vcxproj.filters
 /ConsoleApplication/.vs/ConsoleApplication/v16
+/ConsoleApplication/Debug
+/ConsoleApplication/Release
