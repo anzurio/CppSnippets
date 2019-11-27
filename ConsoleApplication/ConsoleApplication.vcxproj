@@ -152,9 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication.cpp" />
+    <ClCompile Include="PriorityQueueSnippets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CartesianPoint.h" />
+    <ClInclude Include="PriorityQueueSnippets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
