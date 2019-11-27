@@ -20,7 +20,7 @@ public:
 	{
 	}
 
-	CartesianPoint(CartesianPoint<T>&& other)
+	CartesianPoint(CartesianPoint<T>&& other) noexcept
 	{
 		X = std::move(other.X);
 		Y = std::move(other.Y);
