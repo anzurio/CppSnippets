@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/ConsoleApplication/ConsoleApplication.vcxproj.user
+/ConsoleApplication/ConsoleApplication.vcxproj.filters
+/ConsoleApplication/.vs/ConsoleApplication/v16
