@@ -3,9 +3,12 @@
 using namespace BinaryTreeSnippets;
 
 template <typename T>
-void depthFirstSearch(const std::shared_ptr<BinaryNode<T>>& headPtr, T value)
+using BinaryNodePtr = std::shared_ptr<BinaryNode<T>>;
+
+template <typename T>
+void depthFirstSearch(const BinaryNodePtr<T>& headPtr, T value)
 {
-	std::stack<std::shared_ptr<BinaryNode<T>>> stack;
+	std::stack<BinaryNodePtr<T>> stack;
 	stack.push(headPtr);
 
 	while (!stack.empty())
@@ -34,9 +37,9 @@ void depthFirstSearch(const std::shared_ptr<BinaryNode<T>>& headPtr, T value)
 }
 
 template <typename T>
-void breadthFirstSearch(const std::shared_ptr<BinaryNode<T>>& headPtr, T value)
+void breadthFirstSearch(const BinaryNodePtr<T>& headPtr, T value)
 {
-	std::queue<std::shared_ptr<BinaryNode<T>>> queue;
+	std::queue<BinaryNodePtr<T>> queue;
 	queue.push(headPtr);
 
 	while (!queue.empty())
@@ -65,7 +68,7 @@ void breadthFirstSearch(const std::shared_ptr<BinaryNode<T>>& headPtr, T value)
 }
 
 template<typename T>
-void preorderTraversal(const std::shared_ptr<BinaryNode<T>>& headPtr)
+void preorderTraversal(const BinaryNodePtr<T>& headPtr)
 {
 	if (headPtr != nullptr)
 	{
@@ -76,7 +79,7 @@ void preorderTraversal(const std::shared_ptr<BinaryNode<T>>& headPtr)
 }
 
 template<typename T>
-void inorderTraversal(const std::shared_ptr<BinaryNode<T>>& headPtr)
+void inorderTraversal(const BinaryNodePtr<T>& headPtr)
 {
 	if (headPtr != nullptr)
 	{
@@ -87,7 +90,7 @@ void inorderTraversal(const std::shared_ptr<BinaryNode<T>>& headPtr)
 }
 
 template<typename T>
-void postorderTraversal(const std::shared_ptr<BinaryNode<T>>& headPtr)
+void postorderTraversal(const BinaryNodePtr<T>& headPtr)
 {
 	if (headPtr != nullptr)
 	{
@@ -98,9 +101,9 @@ void postorderTraversal(const std::shared_ptr<BinaryNode<T>>& headPtr)
 }
 
 template<typename T>
-std::shared_ptr<BinaryNode<T>> constructBinaryTree(const std::vector<T>& v)
+BinaryNodePtr<T> constructBinaryTree(const std::vector<T>& v)
 {
-	std::vector<std::shared_ptr<BinaryNode<T>>> queue;
+	std::vector<BinaryNodePtr<T>> queue;
 	using size_type = typename decltype(queue)::size_type;
 	for (auto value : v)
 	{
