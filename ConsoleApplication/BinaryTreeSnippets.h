@@ -51,6 +51,7 @@ namespace BinaryTreeSnippets
 	public:
 		std::shared_ptr<BinaryNode<T>> Root;
 		BinaryTree(const BinaryNode<T>& value) = delete;
+		BinaryTree(const BinaryNode<T>&& value) = delete;
 		BinaryTree& operator=(const BinaryNode<T>& other) = delete;
 		BinaryTree(std::vector<T>&& initializer_list);
 		BinaryTree& operator=(BinaryNode<T>&& other) = delete;
