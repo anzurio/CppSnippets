@@ -151,10 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryTreeSnippets.cpp" />
     <ClCompile Include="ConsoleApplication.cpp" />
     <ClCompile Include="PriorityQueueSnippets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryTreeSnippets.h" />
     <ClInclude Include="CartesianPoint.h" />
     <ClInclude Include="PriorityQueueSnippets.h" />
   </ItemGroup>
