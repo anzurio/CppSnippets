@@ -56,14 +56,19 @@ namespace BinaryTreeSnippets
 		BinaryTree& operator=(BinaryNode<T>&& other) = delete;
 		~BinaryTree() = default;
 
-
+#pragma warning(push)
+#pragma warning(disable:4661)
 		void printPreorder();
 		void printPostorder();
 		void printInorder();
 		void traceDepthFirstSearch(T value);
 		void traceBreadthFirstSearch(T value);
+#pragma warning(pop)
 	};
 
+#pragma warning(push)
+#pragma warning(disable:4661)
 	template BinaryTree<char>;
+#pragma warning(pop)
 
 }
