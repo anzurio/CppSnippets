@@ -154,11 +154,13 @@
     <ClCompile Include="BinaryTreeSnippets.cpp" />
     <ClCompile Include="ConsoleApplication.cpp" />
     <ClCompile Include="PriorityQueueSnippets.cpp" />
+    <ClCompile Include="StringUtilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTreeSnippets.h" />
     <ClInclude Include="CartesianPoint.h" />
     <ClInclude Include="PriorityQueueSnippets.h" />
+    <ClInclude Include="StringUtilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
