@@ -18,16 +18,25 @@ public:
 
 	CartesianPoint(const CartesianPoint<T>& other) : X(other.X), Y(other.Y)
 	{
+#ifdef TRACE_MOVE_SEMANTICS
+		std::cout << __FUNCSIG__ << std::endl;
+#endif // TRACE_MOVE_SEMANTICS
 	}
 
 	CartesianPoint(CartesianPoint<T>&& other) noexcept
 	{
+#ifdef TRACE_MOVE_SEMANTICS
+		std::cout << __FUNCSIG__ << std::endl;
+#endif // TRACE_MOVE_SEMANTICS
 		X = std::move(other.X);
 		Y = std::move(other.Y);
 	}
 
 	CartesianPoint<T>& operator=(const CartesianPoint<T>& other)
 	{
+#ifdef TRACE_MOVE_SEMANTICS
+		std::cout << __FUNCSIG__ << std::endl;
+#endif // TRACE_MOVE_SEMANTICS
 		X = other.X;
 		Y = other.Y;
 		return *this;
@@ -35,6 +44,9 @@ public:
 
 	CartesianPoint<T>& operator=(CartesianPoint<T>&& other)
 	{
+#ifdef TRACE_MOVE_SEMANTICS
+		std::cout << __FUNCSIG__ << std::endl;
+#endif // TRACE_MOVE_SEMANTICS
 		if (this != &other)
 		{
 			X = std::move(other.X);
